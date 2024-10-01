@@ -6,7 +6,7 @@ def combine_extracts():
     extracts_directory = "/extracts"
 
     all_records = []
-    extract_file_names = os.listdir(extracts_directory)[0:2]
+    extract_file_names = os.listdir(extracts_directory)
     print(extract_file_names)
 
     for file in extract_file_names:

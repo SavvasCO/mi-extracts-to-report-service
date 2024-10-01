@@ -40,7 +40,7 @@ def insert_records(records):
     professions = json.load(open("professions.json"))["profession"]
     organisations = json.load(open("orgs.json"))["organisational_unit"]
     uid_grades = json.load(open("uid-grades.json"))["grades"]
-    courses = json.load(open("courses2.json"))["courses"]
+    courses = json.load(open("courses.json"))["courses"]
 
     for index,record in enumerate(records):
         _=os.system("clear")
@@ -67,7 +67,7 @@ def insert_records(records):
         organisation_abbreviation = None if organisation == None else organisation["abbreviation"]
 
         insert_query = """
-        INSERT INTO public.course_completion_events
+        INSERT INTO course_completion_events
         (external_id, user_id, user_email, course_id, course_title, event_timestamp, organisation_id, profession_id, grade_id, grade_code, profession_name, organisation_abbreviation)
         VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
         """
